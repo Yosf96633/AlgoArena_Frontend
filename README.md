@@ -37,4 +37,3 @@
 
 ```bash
 git clone https://github.com/yourusername/algo-arena.git
-cd algo-arena/client
