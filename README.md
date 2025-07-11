@@ -1,69 +1,40 @@
-# React + TypeScript + Vite
+# ⚔️ Algo Arena — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Algo Arena (Frontend)** is the user interface of a LeetCode-like coding platform built with **React**, **TypeScript**, **ShadCN UI**, and **TailwindCSS**. It communicates with a backend to allow users to practice coding problems, execute code in real-time using the **Judge0 API**, and manage authentication via **Supabase**.
 
-Currently, two official plugins are available:
+![Status](https://img.shields.io/badge/status-active-blue)
+![Made with](https://img.shields.io/badge/Made%20with-React%2C%20TypeScript%2C%20Tailwind-blueviolet)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌟 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Supabase authentication (Sign Up / Login)
+- 🧠 View and attempt DSA problems
+- ⚙️ Code editor and real-time code execution via Judge0
+- 💡 Modern UI with **ShadCN** components and **TailwindCSS**
+- 💻 Responsive, accessible, and clean layout
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🚀 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Layer    | Technology                   |
+|----------|------------------------------|
+| Framework | React + Vite                |
+| Language | TypeScript                   |
+| Styling  | TailwindCSS + ShadCN         |
+| Auth     | Supabase                     |
+| Judge    | Judge0 API                   |
+| Icons    | Lucide                       |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Installation
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/yourusername/algo-arena.git
+cd algo-arena/client
