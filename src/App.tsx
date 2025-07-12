@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { About, AdminPanel, Auth, Home, SignUp } from "./pages";
+import { About, AdminPanel, Home, Login, SignUp } from "./pages";
 import EditProblem from "./components/EditProblem";
 import SubmitCode from "./components/SubmitCode";
 import Header from "./components/Header";
@@ -12,7 +12,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Auth />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/edit/:slug" element={<EditProblem />} />
           <Route path="/submit" element={<SubmitCode />} />

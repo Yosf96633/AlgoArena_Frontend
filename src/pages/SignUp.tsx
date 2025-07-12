@@ -11,7 +11,7 @@ import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { supabase } from "../lib/supabaseClient";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import axiosInstance from "../lib/axiosInstance";
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,10 +21,10 @@ const SignUp = () => {
   const [isloading, setIsLoading] = useState(false);
   const togglePassword = () => setShowPassword((prev) => !prev);
   const navigate = useNavigate();
-  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
-      setIsLoading(true);
       const { data, error } = await supabase.auth.signUp({
         email: email,
         password: password,
@@ -52,9 +52,11 @@ const SignUp = () => {
     } catch (err) {
       console.log("Error at sign up page , ", err);
       toast(`Error while creating account`);
-    }
-    finally{
+    } finally {
       setIsLoading(false);
+      setUserName("");
+      setEmail("");
+      setPassword("");
     }
   };
   return (
@@ -129,9 +131,9 @@ const SignUp = () => {
 
           <p className="text-sm text-center mt-4 text-muted-foreground">
             Already have an account?{" "}
-            <a href="/login" className="text-primary underline">
+            <Link to="/login" className="text-primary underline">
               Log in
-            </a>
+            </Link>
           </p>
         </CardContent>
       </Card>
