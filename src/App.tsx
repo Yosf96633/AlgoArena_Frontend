@@ -5,9 +5,11 @@ import SubmitCode from "./components/SubmitCode";
 import Header from "./components/Header";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "sonner";
+import { AuthProvider } from "./context/AuthProvider";
 const App = () => {
   return (
-    <ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
       <div className=" relative z-0 dark:selection:bg-white dark:selection:text-black selection:bg-black selection:text-white">
         <Header />
         <Routes>
@@ -22,6 +24,7 @@ const App = () => {
         <Toaster/>
       </div>
     </ThemeProvider>
+    </AuthProvider>
   );
 };
 
